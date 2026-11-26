@@ -1,0 +1,33 @@
+/* Tokens de marca y tema */
+:root {
+  --primary: #B5121B;
+  --secondary: #F04438;
+  --accent: #8C959F;
+  --text: #1F2937;
+  --bg: #FAFAFA;
+  --space: 16px;
+  --radius: 10px;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --ink: #101820;
+  --asphalt: #171F27;
+  --asphalt-soft: #202B35;
+  --paper: #F4F5F2;
+  --muted: #9AA5AE;
+  --line: rgba(31, 41, 55, 0.14);
+  --line-light: rgba(255, 255, 255, 0.18);
+  --danger: #B42318;
+  --font-body: "Inter", "Segoe UI", sans-serif;
+  --font-display: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --content-width: 1200px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --bg: #121920;
+    --text: #E8EDF1;
+    --paper: #19232C;
+    --ink: #F4F5F2;
+    --line: rgba(255, 255, 255, 0.18);
+  }
+}
