@@ -1,0 +1,262 @@
+/* Estructura base mobile-first */
+body {
+  min-width: 320px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 3px solid var(--secondary);
+  outline-offset: 4px;
+}
+
+:is(.container, .contenedor) {
+  width: min(calc(100% - 40px), var(--content-width));
+  margin-inline: auto;
+}
+
+:is(.section, .seccion) {
+  padding-block: 76px;
+}
+
+:is(.section-light, .seccion-clara) {
+  background: var(--paper);
+  color: var(--text);
+}
+
+.section-asphalt {
+  background: var(--asphalt);
+  color: #F4F5F2;
+}
+
+:is(.skip-link, .enlace-saltar) {
+  position: fixed;
+  z-index: 20;
+  top: 10px;
+  left: 10px;
+  padding: 10px 16px;
+  transform: translateY(-160%);
+  background: var(--secondary);
+  color: var(--ink);
+  font-weight: 800;
+}
+
+:is(.skip-link, .enlace-saltar):focus {
+  transform: translateY(0);
+}
+
+:is(.section-heading, .encabezado-seccion) {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 36px;
+}
+
+:is(.section-heading, .encabezado-seccion) h2,
+:is(.safety-inner, .interior-seguridad) h2,
+:is(.cta-panel, .panel-llamada) h2,
+.booking-aside h2,
+:is(.contact-details, .detalles-contacto) h2,
+.certification-layout h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 9vw, 4.1rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 0.98;
+  text-transform: uppercase;
+}
+
+:is(.section-heading, .encabezado-seccion) h2 span,
+:is(.safety-inner, .interior-seguridad) h2 span,
+:is(.cta-panel, .panel-llamada) h2 span,
+.booking-aside h2 span,
+:is(.contact-details, .detalles-contacto) h2 span,
+.certification-layout h2 span {
+  color: var(--secondary);
+}
+
+:is(.section-light, .seccion-clara) :is(.section-heading, .encabezado-seccion) h2 span,
+:is(.section-light, .seccion-clara) .booking-aside h2 span,
+:is(.section-light, .seccion-clara) :is(.contact-details, .detalles-contacto) h2 span {
+  color: var(--primary);
+}
+
+:is(.section-intro, .introduccion-seccion) {
+  max-width: 440px;
+  color: var(--muted);
+}
+
+:is(.section-light, .seccion-clara) :is(.section-intro, .introduccion-seccion) {
+  color: #56616A;
+}
+
+:is(.eyebrow, .sobretitulo) {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--secondary);
+  font-size: 0.69rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+:is(.eyebrow-dark, .sobretitulo-oscuro) {
+  color: var(--primary);
+}
+
+:is(.eyebrow-line, .linea-sobretitulo) {
+  display: inline-block;
+  width: 28px;
+  height: 2px;
+  background: var(--secondary);
+}
+
+:is(.button, .boton) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  min-height: 52px;
+  padding: 13px 20px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  line-height: 1.3;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+:is(.button, .boton):hover {
+  transform: translateY(-3px);
+}
+
+:is(.button, .boton):active {
+  transform: translateY(0) scale(0.98);
+}
+
+:is(.button-primary, .boton-principal) {
+  background: var(--secondary);
+  color: var(--ink);
+  animation: button-arrive 700ms 500ms both;
+}
+
+:is(.button-primary, .boton-principal):hover {
+  background: #FF5A52;
+  box-shadow: 0 8px 22px rgba(240, 68, 56, 0.24);
+}
+
+:is(.button-dark, .boton-oscuro) {
+  background: var(--primary);
+  color: #fff;
+}
+
+:is(.button-dark, .boton-oscuro):hover {
+  background: #8F111A;
+  box-shadow: 0 8px 22px rgba(181, 18, 27, 0.22);
+}
+
+.button-outline {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.button-outline:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+:is(.text-link, .enlace-texto),
+:is(.arrow-link, .enlace-flecha) {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition: gap 180ms ease, color 180ms ease;
+}
+
+:is(.text-link, .enlace-texto):hover,
+:is(.arrow-link, .enlace-flecha):hover {
+  gap: 16px;
+}
+
+.text-link-dark {
+  color: var(--primary);
+}
+
+:is(.text-link-light, .enlace-texto-claro) {
+  color: #fff;
+}
+
+:is(.status-dot, .punto-estado) {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  flex: 0 0 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px rgba(140, 149, 159, 0.12);
+}
+
+@media (min-width: 601px) and (max-width: 992px) {
+  :is(.container, .contenedor) {
+    width: min(calc(100% - 56px), var(--content-width));
+  }
+
+  :is(.section, .seccion) {
+    padding-block: 88px;
+  }
+}
+
+@media (min-width: 993px) {
+  :is(.container, .contenedor) {
+    width: min(calc(100% - 80px), var(--content-width));
+  }
+
+  :is(.section, .seccion) {
+    padding-block: 112px;
+  }
+
+  :is(.section-heading, .encabezado-seccion) {
+    flex-direction: row;
+    align-items: end;
+    justify-content: space-between;
+    margin-bottom: 52px;
+  }
+
+  :is(.section-intro, .introduccion-seccion) {
+    padding-bottom: 7px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
